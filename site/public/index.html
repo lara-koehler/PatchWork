@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PatchWork — Gallery</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand">Patch<span>Work</span></div>
+  <a class="navlink active" href="index.html">Gallery</a>
+  <a class="navlink" href="categories.html">Categories</a>
+  <a class="navlink" href="phase-map.html">Phase Map</a>
+  <a class="navlink" href="science.html">The Science</a>
+  <button class="btn-surprise" data-surprise-me>🎲 Surprise me</button>
+</nav>
+
+<main>
+  <div class="page-header">
+    <h1>A gallery of self-assembled particles</h1>
+    <p>Every tile below is a simulated swarm of 500 particles that were free to stick together however their
+      patches allowed. Some barely noticed each other; others locked into rigid crystals, tangled into gels, or
+      spun out into long fibers. Click any tile to explore it up close.</p>
+  </div>
+
+  <div class="controls">
+    <label>Category
+      <select id="f-category">
+        <option value="">All categories</option>
+      </select>
+    </label>
+    <label>Size
+      <select id="f-size">
+        <option value="">Any size</option>
+        <option value="tiny">Loners &amp; tiny clumps (&lt; 10)</option>
+        <option value="small">Small clusters (10–100)</option>
+        <option value="medium">Medium structures (100–400)</option>
+        <option value="large">Fills the box (400+)</option>
+      </select>
+    </label>
+    <label>Sort by
+      <select id="f-sort">
+        <option value="random" selected>Shuffle</option>
+        <option value="featured">Featured</option>
+        <option value="size-desc">Largest first</option>
+        <option value="size-asc">Smallest first</option>
+        <option value="round-desc">Roundest first</option>
+      </select>
+    </label>
+    <label class="checklabel">
+      <input type="checkbox" id="f-verified" checked />
+      Verified examples only
+    </label>
+    <div class="count" id="result-count"></div>
+  </div>
+
+  <div class="grid" id="gallery-grid"></div>
+  <div class="load-more-wrap">
+    <button class="btn-load-more" id="load-more" hidden>Load more</button>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Simulation data from <em>Phys. Rev. X 14, 041061 (2024)</em>. See the <a href="science.html">science page</a>
+  for more.
+</footer>
+
+<script type="module" src="js/nav.js"></script>
+<script type="module" src="js/gallery.js"></script>
+</body>
+</html>

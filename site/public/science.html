@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PatchWork — The Science</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand">Patch<span>Work</span></div>
+  <a class="navlink" href="index.html">Gallery</a>
+  <a class="navlink" href="categories.html">Categories</a>
+  <a class="navlink" href="phase-map.html">Phase Map</a>
+  <a class="navlink active" href="science.html">The Science</a>
+  <button class="btn-surprise" data-surprise-me>🎲 Surprise me</button>
+</nav>
+
+<main>
+  <div class="page-header">
+    <h1>What's actually going on here?</h1>
+  </div>
+
+  <div class="science-body">
+    <p>Every assembly on this site is a simulated swarm of <strong>500 identical particles</strong>, each shaped
+      like a little hexagon with six "patches" around its rim — think of them as six sticky spots, each with its
+      own strength. Two particles can only bond where a patch on one touches a patch on the other, and how
+      strongly they stick depends on which pair of patches is in contact.</p>
+
+    <p>In this dataset, the strength of every one of the 21 distinct patch-pair combinations was drawn at random
+      from a bell curve, rather than designed by hand. That bell curve has two dials: its <strong>average</strong>
+      (how sticky patches are, on the whole) and its <strong>spread</strong> (how much patches disagree with each
+      other — some pairs love sticking together, others repel). Turn those two dials and you get a completely
+      different random rulebook for how particles interact — and a completely different structure grows out of
+      it, from a lonely gas of monomers to a rigid crystal, a tangled gel, or a thin fiber.</p>
+
+    <p>The simulations themselves run with the Metropolis Monte Carlo method: particles are nudged and rotated
+      one at a time, and a move is kept or discarded based on whether it lowers the system's energy (with some
+      randomness so the system can escape dead ends). Left running long enough, particles settle into whatever
+      arrangement is most favorable for that particular random rulebook.</p>
+
+    <h2>How assemblies are sorted into families</h2>
+    <p>Every simulated outcome was inspected and sorted into one of eight structural families — monomer,
+      oligomer, gel, polycrystal, fiber, sponge, crystal, or liquid — based purely on its shape and connectivity,
+      not on which dial settings produced it. Some of those calls were made and checked by a person; the rest
+      were sorted automatically the same way and are flagged as such throughout the site.</p>
+
+    <h2>What the "stability" view is showing</h2>
+    <p>On each assembly's page, switching to the stability view colors every particle by how its local bonding
+      compares to the assembly's average — not a real physical quantity with units, just a relative way to spot
+      which particles sit in the most and least comfortable neighborhoods of a given structure.</p>
+
+    <h2>The paper</h2>
+    <p>This site visualizes simulation output from:</p>
+    <div class="citation-box">
+      "How Do Particles with Complex Interactions Self-Assemble?"<br/>
+      <em>Phys. Rev. X 14, 041061 (2024)</em><br/>
+      <a href="https://doi.org/10.1103/PhysRevX.14.041061" target="_blank" rel="noopener">doi.org/10.1103/PhysRevX.14.041061</a>
+    </div>
+    <p style="margin-top:18px;">This site was built by the paper's first author as an independent visualization of
+      that research, and is not an official publication of the journal or publisher.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <a href="index.html">&larr; Back to the gallery</a>
+</footer>
+
+<script type="module" src="js/nav.js"></script>
+</body>
+</html>

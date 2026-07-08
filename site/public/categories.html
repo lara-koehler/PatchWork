@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PatchWork — Categories</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand">Patch<span>Work</span></div>
+  <a class="navlink" href="index.html">Gallery</a>
+  <a class="navlink active" href="categories.html">Categories</a>
+  <a class="navlink" href="phase-map.html">Phase Map</a>
+  <a class="navlink" href="science.html">The Science</a>
+  <button class="btn-surprise" data-surprise-me>🎲 Surprise me</button>
+</nav>
+
+<main>
+  <div class="page-header">
+    <h1 id="cat-title">Structure families</h1>
+    <p id="cat-subtitle">Every assembly was sorted into one of eight structural families, purely by what shape
+      it settled into — not by how it was made. Pick a family to browse it.</p>
+  </div>
+
+  <div id="cat-hub"></div>
+  <div id="cat-detail" hidden>
+    <div class="controls">
+      <a class="btn-load-more" href="categories.html" style="text-decoration:none;">&larr; All families</a>
+      <label>Sort by
+        <select id="f-sort">
+          <option value="random" selected>Shuffle</option>
+          <option value="featured">Featured</option>
+          <option value="size-desc">Largest first</option>
+          <option value="size-asc">Smallest first</option>
+        </select>
+      </label>
+      <div class="count" id="result-count"></div>
+    </div>
+    <div class="grid" id="detail-grid"></div>
+    <div class="load-more-wrap"><button class="btn-load-more" id="load-more" hidden>Load more</button></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Simulation data from <em>Phys. Rev. X 14, 041061 (2024)</em>. See the <a href="science.html">science page</a>
+  for more.
+</footer>
+
+<script type="module" src="js/nav.js"></script>
+<script type="module" src="js/category.js"></script>
+</body>
+</html>

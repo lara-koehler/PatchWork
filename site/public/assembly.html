@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PatchWork — Detail</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand">Patch<span>Work</span></div>
+  <a class="navlink" href="index.html">Gallery</a>
+  <a class="navlink" href="categories.html">Categories</a>
+  <a class="navlink" href="phase-map.html">Phase Map</a>
+  <a class="navlink" href="science.html">The Science</a>
+  <button class="btn-surprise" data-surprise-me>🎲 Surprise me</button>
+</nav>
+
+<main>
+  <div class="breadcrumbs" id="breadcrumbs">Loading…</div>
+
+  <div id="loading-note" class="loading-note">Loading assembly…</div>
+
+  <div class="detail-layout" id="detail-layout" hidden>
+    <div>
+      <div id="viewer-wrap">
+        <div class="viewer-controls">
+          <button id="btn-patch-view" class="active" data-mode="patch">Patch view</button>
+          <button id="btn-orientation-view" data-mode="orientation">Orientation view</button>
+          <button id="btn-energy-view" data-mode="energy">Energy view</button>
+        </div>
+        <div class="viewer-hint">Drag to pan &middot; scroll or pinch to zoom &middot; double-click to reset</div>
+      </div>
+      <p id="view-explainer" style="color:var(--text-dim);font-size:0.85rem;margin-top:10px;max-width:60ch;"></p>
+    </div>
+
+    <div class="side-panel">
+      <div class="panel-box">
+        <h3 id="cat-heading">—</h3>
+        <p id="cat-blurb" style="color:var(--text-dim);margin:0 0 10px;"></p>
+        <div class="nav-buttons-row">
+          <a id="link-category" href="#">Browse this family</a>
+          <a id="link-phasemap" href="phase-map.html">See on phase map</a>
+          <button id="btn-another">Another like this</button>
+        </div>
+      </div>
+
+      <div class="panel-box">
+        <h3>The recipe</h3>
+        <div class="recipe-row"><span class="k">Stickiness</span><span id="recipe-mu"></span></div>
+        <div class="recipe-row"><span class="k">Patch diversity</span><span id="recipe-sigma"></span></div>
+      </div>
+
+      <div class="panel-box">
+        <h3>At a glance</h3>
+        <div id="gauges"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Simulation data from <em>Phys. Rev. X 14, 041061 (2024)</em>. See the <a href="science.html">science page</a>
+  for more.
+</footer>
+
+<script type="module" src="js/nav.js"></script>
+<script type="module" src="js/assembly.js"></script>
+</body>
+</html>

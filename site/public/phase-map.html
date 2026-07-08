@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PatchWork — Phase Map</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand">Patch<span>Work</span></div>
+  <a class="navlink" href="index.html">Gallery</a>
+  <a class="navlink" href="categories.html">Categories</a>
+  <a class="navlink active" href="phase-map.html">Phase Map</a>
+  <a class="navlink" href="science.html">The Science</a>
+  <button class="btn-surprise" data-surprise-me>🎲 Surprise me</button>
+</nav>
+
+<main>
+  <div class="page-header">
+    <h1>The parameter map</h1>
+    <p>Every assembly comes from a recipe with two dials: how <strong>sticky</strong> particles are with one
+      another on average, and how much their patches <strong>vary</strong> in stickiness from one another. Each
+      dot below is one simulated recipe, colored by what it grew into and placed by its two dial settings.
+      Hover a dot to preview it, click to explore it up close.</p>
+  </div>
+
+  <div class="controls">
+    <label>Category
+      <select id="pm-category">
+        <option value="">All categories</option>
+      </select>
+    </label>
+    <label class="checklabel">
+      <input type="checkbox" id="pm-verified" />
+      Verified examples only
+    </label>
+    <div class="count" id="pm-count"></div>
+  </div>
+
+  <div id="phase-map-wrap">
+    <canvas id="pm-canvas"></canvas>
+    <div class="pm-tooltip" id="pm-tooltip"></div>
+  </div>
+
+  <div class="cat-chip-row" id="pm-legend" style="margin-top:18px;"></div>
+</main>
+
+<footer class="site-footer">
+  Simulation data from <em>Phys. Rev. X 14, 041061 (2024)</em>. See the <a href="science.html">science page</a>
+  for more.
+</footer>
+
+<script type="module" src="js/nav.js"></script>
+<script type="module" src="js/phase-map.js"></script>
+</body>
+</html>
