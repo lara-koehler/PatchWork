@@ -1,7 +1,8 @@
-# Patchy Assembly site
+# PatchWork
 
 A static, no-backend showcase site for the patchy-particle self-assembly simulations
-in `data/240531RandomOne/`.
+in `data/240531RandomOne/`. See `../README.md` for the whole-repo overview and
+`ARCHITECTURE.md` for a full code walkthrough.
 
 ## Layout
 
@@ -21,22 +22,30 @@ python3 -m http.server 8000
 # then open http://localhost:8000/ in your browser
 ```
 
-That's it — no npm install, no bundler. The only network dependency is loading
-three.js from a CDN (unpkg.com) for the 3D viewer on the assembly detail page.
+That's it — no npm install, no bundler, no external dependencies at all. The
+assembly detail viewer is a plain 2D `<canvas>` (pan + zoom) — the simulation
+is genuinely flat, so there's nothing 3D to render.
 
 ## Regenerating the data
 
-Only needed if the raw simulation data changes. Requires `numpy` and `Pillow`
-(no scipy/matplotlib):
+`site/build/extract_data.py` is the full pipeline (raw pickles → manifest +
+shards + thumbnails), but it needs `data/240531RandomOne/ImagesData/` (the raw
+per-particle positions, ~7.5GB), which was deleted after the initial
+extraction since everything it could supply is already baked into
+`site/public/data/`. It's only needed again if you want to pull in a new
+metric or dataset that isn't already extracted.
+
+Two lighter scripts don't need the raw data at all — they read
+positions/orientations back out of the already-extracted
+`site/public/data/shards/*.bin`:
 
 ```bash
-python3 site/build/extract_data.py
+python3 site/build/regen_thumbnails.py   # re-render thumbnails (~90s for all 9000)
+python3 site/build/regen_energy.py       # recompute the per-particle bond-energy field
 ```
 
-This reads ~7.5GB of raw pickles from `data/240531RandomOne/ImagesData/` and
-writes ~140MB into `site/public/data/` (manifest + binary position shards +
-WebP thumbnails). Takes about 3 minutes. The raw pickles themselves are never
-read by the website and should not be committed to git.
+Requires `numpy` and `Pillow` (no scipy/matplotlib). See `ARCHITECTURE.md` for
+what each script actually does.
 
 ## Deploying
 
